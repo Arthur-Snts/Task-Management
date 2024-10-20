@@ -1,0 +1,27 @@
+<head>
+    <link rel="stylesheet" href="layout.css">
+</head>
+{% extends 'layout.html' %}
+
+{% block title %}
+    Cadastro
+{% endblock %}
+{% block nav %}
+    <div></div>
+{% endblock %}
+{% block conteudo %}
+<h1>Cadastro</h1>
+<form action="{{ url_for('cadastro' ) }}" method="post">
+    <label for="usu_nome">Nome</label>
+    <input type="text" name="nome" placeholder="Insira seu Nome" required>
+    <label for="usu_email" >Email</label>
+    <input type="email" name="email" placeholder="Insira seu Email" required>
+    <label for="usu_senha">Senha</label>
+    <input type="password" name="senha" placeholder="Insira sua Senha para voltas futuras" required>
+    <div class="enviar">
+        <a href="{{ url_for('login' ) }}" id="login">Já tem login? Entre por aqui!</a>
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+{% endblock %}

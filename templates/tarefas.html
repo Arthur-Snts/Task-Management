@@ -1,0 +1,46 @@
+<head>
+    <link rel="stylesheet" href="layout.css">
+</head>
+{% extends 'layout.html' %}
+
+{% block title %}
+    Criação
+{% endblock %}
+
+{% block conteudo %}
+<h1>Criar Tarefas</h1>
+<form action="{{ url_for('criar' ) }}" method="post">
+    <label for="tar_nome">Nome</label>
+    <input type="text" name="nome" placeholder="Digite o Nome que desejar para sua tarefa" required>
+
+    <label for="tar_descricao">Descrição</label>
+    <input type="text" name="descricao" placeholder="Digite a Descrição que desejar para sua tarefa" required>
+
+    <label for="tar_status">Status</label>
+    <select name="status" required>
+        <option value="Concluída">Concluida</option>
+        <option value="Em Andamento">Em Andamento</option>
+        <option value="Pendente">Pendente</option>
+    </select>
+
+    <label for="tar_prioridade">Prioridade</label>
+    <select name="prioridade" required>
+        <option value="Baixa">Baixa</option>
+        <option value="Média">Media</option>
+        <option value="Alta">Alta</option>
+    </select>
+
+    <label for="tar_prazo">Prazo</label>
+    <input type="date" name="prazo" required>
+     
+    <label for="categoria">Categoria</label>
+    <select name="categoria" required>
+        <option value="Trabalho">Trabalho</option>
+        <option value="Pessoal">Pessoal</option>
+        <option value="Estudo">Estudo</option>
+    </select>
+    <div class="enviar" >
+        <button type="submit">Criar</button>
+    </div>
+</form>
+{% endblock %}

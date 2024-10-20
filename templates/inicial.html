@@ -1,0 +1,66 @@
+<head>
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+{% extends 'layout.html' %}
+{% block title %}
+    Inicial
+{% endblock %}
+{% block conteudo %}
+    <h1>Suas Tarefas</h1>
+    {% for tarefa in tarefas %}
+        
+        <form action="{{url_for('remove', id=tarefa['tar_id'])}}" method="POST" >
+            <div class="enviar">
+                <p>Nome: <b>{{tarefa["tar_nome"]}}</b>, <i>{{tarefa["tar_descricao"]}}</i></p>
+                <p>Status: <b>{{tarefa["tar_status"]}}</b></p>
+                <i>Criado em: <b>{{tarefa["tar_data_criacao"]}}</b></i>
+                <i>Tendo prazo até: <b>{{tarefa["tar_prazo"]}}</b></i>
+                <p>Na qual a prioridade é: <b>{{tarefa["tar_prioridade"]}}</b></p>
+                <p>Categoria: <b>{{tarefa["tar_categoria"]}}</b></p>
+                <button type="submit" >deletar</button>
+            </div>
+        </form>
+    {% endfor %}
+
+    <h1>Filtros</h1>
+    <form action="{{ url_for('inicial' ) }}", method="post">
+    
+    <label for="tar_descricao">Descrição, digite palavras presente na descrição</label>
+    <input type="text" name="descricao" placeholder="Deixe em branco caso não queira filtrar">
+
+    <label for="tar_status">Status</label>
+    <select name="status" >
+        <option value="">Não filtrar esse parâmetro</option>
+        <option value="Concluída">Concluída</option>
+        <option value="Em Andamento">Em Andamento</option>
+        <option value="Pendente">Pendente</option>
+    </select>
+
+    <label for="tar_prioridade">Prioridade</label>
+    <select name="prioridade">
+        <option value="">Não filtrar esse parâmetro</option>
+        <option value="Baixa">Baixa</option>
+        <option value="Média">Média</option>
+        <option value="Alta">Alta</option>
+    </select>
+
+    <label for="tar_prazo">Prazo(selecione até qual data quer que as tarefas apareçam)</label>
+    <input type="date" name="prazo" placeholder="Deixe em branco caso não queira filtrar">
+
+    <label for="tar_criacao">Criação(selecione até qual data quer que as tarefas apareçam)</label>
+    <input type="date" name="criacao" placeholder="Deixe em branco caso não queira filtrar">
+
+    <label for="tar_categoria">Categoria</label>
+    <select name="categoria">
+        <option value="">Não filtrar esse parâmetro</option>
+        <option value="Trabalho">Trabalho</option>
+        <option value="Pessoal">Pessoal</option>
+        <option value="Estudo">Estudo</option>
+    </select>
+
+    <div class="enviar">
+        <button type="submit">Enviar</button>
+    </div>
+    </form>
+{% endblock %}

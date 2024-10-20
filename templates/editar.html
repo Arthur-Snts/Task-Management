@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+<head>
+    <link rel="stylesheet" href="layout.css">
+</head>
+{% block title %}
+    Edite Tarefas
+{% endblock %}
+
+{% block conteudo %}
+<h1>Editar Tarefas</h1>
+    <form action="{{ url_for('editar' ) }}" method="post">
+        
+    <label for="tar_nome">Qual tarefa atualizar</label>
+    <select name="id">
+        {% for tarefa in tarefas %}
+            <option value="{{tarefa['tar_id']}}">{{tarefa["tar_nome"]}} : {{tarefa["tar_descricao"]}}</option>
+        {% endfor %} 
+    </select>
+
+    <label for="tar_descricao">Descrição</label>
+    <input type="text" name="descricao" placeholder="Deixe em branco caso não queira atualizar">
+
+    <label for="tar_status">Status</label>
+    <select name="status" >
+        <option value="">Não atualizar esse parâmetro</option>
+        <option value="Concluída">Concluída</option>
+        <option value="Em Andamento">Em Andamento</option>
+        <option value="Pendente">Pendente</option>
+    </select>
+
+    <label for="tar_prioridade">Prioridade</label>
+    <select name="prioridade">
+        <option value="">Não atualizar esse parâmetro</option>
+        <option value="Baixa">Baixa</option>
+        <option value="Média">Média</option>
+        <option value="Alta">Alta</option>
+    </select>
+
+    <label for="tar_prazo">Prazo</label>
+    <input type="date" name="prazo" placeholder="Deixe em branco caso não queira atualizar">
+
+    <label for="tar_categoria">Categoria</label>
+    <select name="categoria">
+        <option value="">Não atualizar esse parâmetro</option>
+        <option value="Trabalho">Trabalho</option>
+        <option value="Pessoal">Pessoal</option>
+        <option value="Estudo">Estudo</option>
+    </select>
+
+    <div class="enviar">
+        <button type="submit">Editar</button>
+    </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100hv;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+nav{
+    background-color: rgb(119, 178, 85);
+    width: auto;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+
+h1 {
+    margin-left: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    color: rgb(8, 128, 8);
+}
+
+
+button {
+    padding: 7px 11px;
+    background-color: #1b5d00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 5rem;
+    margin-top: 2rem;
+}
+
+form{
+    width: 50%;
+    height: auto; 
+    max-width: 650px; 
+    box-shadow: 1px 1px 15px rgba(158, 158, 158, 0.3);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    border-radius: 8px; 
+    margin: auto;  
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+
+form input,select{
+    width: auto;
+    padding: 3px;
+    
+}
+
+
+input:focus {
+    outline: none; 
+    border: 1px green solid;
+}
+
+label{
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+
+.enviar {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+b, strong {
+    color: rgb(8, 128, 8);
+}
+
+body{
+    background-color: black;
+}
+
+*{
+    color: white;
+}
+input, select, option{
+    background-color: black;
+    box-shadow: 1px 1px 15px rgba(158, 158, 158, 0.3);
+    border: none;
+}
+
+input :hover, select :hover, option :hover{
+    box-shadow: 1px 1px 15px rgb(8, 128, 8);
+}
+#login {
+    margin-top: 30px;
+    text-decoration: none;
+}
+p, i {
+    margin-bottom: 7px;
+}
