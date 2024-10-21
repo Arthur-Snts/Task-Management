@@ -7,25 +7,10 @@
     Inicial
 {% endblock %}
 {% block conteudo %}
-    <h1>Suas Tarefas</h1>
-    {% for tarefa in tarefas %}
-        
-        <form action="{{url_for('remove', id=tarefa['tar_id'])}}" method="POST" >
-            <div class="enviar">
-                <p>Nome: <b>{{tarefa["tar_nome"]}}</b>, <i>{{tarefa["tar_descricao"]}}</i></p>
-                <p>Status: <b>{{tarefa["tar_status"]}}</b></p>
-                <i>Criado em: <b>{{tarefa["tar_data_criacao"]}}</b></i>
-                <i>Tendo prazo até: <b>{{tarefa["tar_prazo"]}}</b></i>
-                <p>Na qual a prioridade é: <b>{{tarefa["tar_prioridade"]}}</b></p>
-                <p>Categoria: <b>{{tarefa["tar_categoria"]}}</b></p>
-                <button type="submit" >deletar</button>
-            </div>
-        </form>
-    {% endfor %}
 
     <h1>Filtros</h1>
     <form action="{{ url_for('inicial' ) }}", method="post">
-    
+
     <label for="tar_descricao">Descrição, digite palavras presente na descrição</label>
     <input type="text" name="descricao" placeholder="Deixe em branco caso não queira filtrar">
 
@@ -63,4 +48,21 @@
         <button type="submit">Enviar</button>
     </div>
     </form>
+
+    <h1>Suas Tarefas</h1>
+    {% for tarefa in tarefas %}
+        
+        <form action="{{url_for('remove', id=tarefa['tar_id'])}}" method="POST" >
+            <div class="enviar">
+                <p>Nome: <b>{{tarefa["tar_nome"]}}</b>, <i>{{tarefa["tar_descricao"]}}</i></p>
+                <p>Status: <b>{{tarefa["tar_status"]}}</b></p>
+                <i>Criado em: <b>{{tarefa["tar_data_criacao"]}}</b></i>
+                <i>Tendo prazo até: <b>{{tarefa["tar_prazo"]}}</b></i>
+                <p>Na qual a prioridade é: <b>{{tarefa["tar_prioridade"]}}</b></p>
+                <p>Categoria: <b>{{tarefa["tar_categoria"]}}</b></p>
+                <button type="submit" >deletar</button>
+            </div>
+        </form>
+    {% endfor %}
+
 {% endblock %}

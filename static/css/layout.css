@@ -104,8 +104,7 @@ body{
 }
 input, select, option{
     background-color: black;
-    box-shadow: 1px 1px 15px rgba(158, 158, 158, 0.3);
-    border: none;
+    border: 1px solid white;
 }
 
 input :hover, select :hover, option :hover{
