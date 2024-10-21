@@ -120,27 +120,27 @@ class User(UserMixin):
 
         if desc:
             if len(variaveis) > 0:
-                SELECT += " ,"
+                UPDATE += " ,"
             UPDATE += " tar_descricao = %s"
             variaveis.append(desc)
         if status:
             if len(variaveis) > 0:
-                SELECT += " ,"
+                UPDATE += " ,"
             UPDATE += " tar_status = %s"
             variaveis.append(status)
         if limite:
             if len(variaveis) > 0:
-                SELECT += " ,"
+                UPDATE += " ,"
             UPDATE += " tar_prazo = %s"
             variaveis.append(limite)
         if prioridade:
             if len(variaveis) > 0:
-                SELECT += " ,"
+                UPDATE += " ,"
             UPDATE += " tar_prioridade = %s"
             variaveis.append(prioridade)
         if categoria:
             if len(variaveis) > 0:
-                SELECT += " ,"
+                UPDATE += " ,"
             UPDATE += " tar_categoria = %s"
             variaveis.append(categoria)
         UPDATE += "WHERE tar_id = %s "
