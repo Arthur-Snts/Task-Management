@@ -6,7 +6,7 @@ def obter_conexao():
     'user': 'root',
     'password': '',
     'host': 'localhost',
-    'database': ''
+    'database': 'db_gerenciamento'
     }
     conn = sql.connect(**db_config, auth_plugin='mysql_native_password')
     
