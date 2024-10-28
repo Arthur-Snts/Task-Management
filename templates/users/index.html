@@ -1,0 +1,28 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+{% block nav %}
+    <div></div>
+{% endblock %}
+{% block conteudo %}
+<h1>Login</h1>
+<form action="{{ url_for('users.login' ) }}" method="post">
+    <label for="usu_email" >Email</label>
+    <input type="email" name="email" placeholder="Insira seu Email que Cadastrou" required>
+    <label for="usu_senha">Senha</label>
+    <input type="password" name="senha" placeholder="Insira sua Senha que Cadastrou" required>
+    {% if frase %}
+        <label style="color: rgb(8, 128, 8);">{{frase}}</label>
+    {% endif %}
+    
+    <div class="enviar">
+        <a href="{{ url_for('users.cadastro' ) }}" id="login">Não tem login? Se cadastre!</a>
+        <button type="submit">Enviar</button>
+    </div>
+    
+</form>
+
+{% endblock %}

@@ -13,10 +13,10 @@
     {% block nav %}
         
     <nav>
-        <a href="{{ url_for('inicial' ) }}">Suas Tarefas</a>
-        <a href="{{ url_for('editar' ) }}">Atualizar tarefas</a>
-        <a href="{{ url_for('criar' ) }}">Criar novas tarefas</a>
-        <a href="{{ url_for('logout' ) }}">Logout</a>
+        <a href="{{ url_for('tasks.inicial' ) }}">Suas Tarefas</a>
+        <a href="{{ url_for('tasks.editar' ) }}">Atualizar tarefas</a>
+        <a href="{{ url_for('tasks.criar' ) }}">Criar novas tarefas</a>
+        <a href="{{ url_for('users.logout' ) }}">Logout</a>
     </nav>
 
     {% endblock %}

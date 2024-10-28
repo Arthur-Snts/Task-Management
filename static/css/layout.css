@@ -11,7 +11,7 @@ body {
 }
 
 nav{
-    background-color: rgb(119, 178, 85);
+    background-color: rgb(137, 207, 240);
     width: auto;
     height: 10vh;
     display: flex;
@@ -32,13 +32,13 @@ h1 {
     margin-left: 5rem;
     margin-top: 3rem;
     margin-bottom: 2rem;
-    color: rgb(8, 128, 8);
+    color: rgb(137, 207, 240);
 }
 
 
 button {
     padding: 7px 11px;
-    background-color: #1b5d00;
+    background-color: rgb(137, 207, 240);
     color: white;
     border: none;
     border-radius: 5px;
@@ -73,7 +73,7 @@ form input,select{
 
 input:focus {
     outline: none; 
-    border: 1px green solid;
+    border: 1px rgb(137, 207, 240);
 }
 
 label{
@@ -91,20 +91,31 @@ label{
     align-items: center;
 }
 
+.deletar{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
 b, strong {
-    color: rgb(8, 128, 8);
+    color: rgb(137, 207, 240);
 }
 
 body{
-    background-color: black;
+    background-color: gainsboro;
 }
 
 *{
-    color: white;
+    color: black;
 }
 input, select, option{
-    background-color: black;
-    border: 1px solid white;
+    background-color:   gainsboro;
+    border: None;
+}
+
+input:focus, select:focus, option:focus{
+    background-color:   gainsboro;
+    border: None;
 }
 
 input :hover, select :hover, option :hover{
@@ -116,4 +127,10 @@ input :hover, select :hover, option :hover{
 }
 p, i {
     margin-bottom: 7px;
+}
+
+
+#pai{ 
+    display: flex;
+    flex-wrap: wrap;
 }
