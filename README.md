@@ -1,4 +1,4 @@
-# Projeto-DB
+# Gerenciador de Tarefas (Task Management)
 
 Aqui está um projeto desenvolvido para criação, edite, delete, listagem com filtros de tarefas Pessoais, de trabalhos ou Escolares. Fiquem a vontade para ver.
 
