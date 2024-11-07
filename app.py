@@ -7,6 +7,7 @@ login_manager = LoginManager()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SUPERMEGADIFICIL'
 login_manager.init_app(app)
+
 app.register_blueprint(users.bp)
 app.register_blueprint(tasks.bp)
 
