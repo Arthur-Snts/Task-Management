@@ -12,7 +12,7 @@ class User(UserMixin):
     def get(cls, id):
         conexao = obter_conexao()
         cursor = conexao.cursor()
-        SELECT = 'SELECT * FROM tb_usuarios WHERE usu_id=%s'
+        SELECT = 'SELECT * FROM tb_usuarios WHERE usu_id=?'
         cursor.execute(SELECT, (id,))
         dados = cursor.fetchone()
         if dados:
@@ -25,8 +25,8 @@ class User(UserMixin):
     @classmethod
     def select_user_by_email(cls, email):
         conexao = obter_conexao()
-        cursor = conexao.cursor(dictionary=True)
-        SELECT = 'SELECT * FROM tb_usuarios WHERE usu_email=%s'
+        cursor = conexao.cursor()
+        SELECT = 'SELECT * FROM tb_usuarios WHERE usu_email=?'
         cursor.execute(SELECT, (email,))
         dados = cursor.fetchone()
     
@@ -43,8 +43,8 @@ class User(UserMixin):
     def insert_user(cls, nome, email, senha):
         conexao = obter_conexao()
 
-        cursor = conexao.cursor(dictionary=True)
-        INSERT = 'INSERT INTO tb_usuarios (usu_nome, usu_email, usu_senha) VALUES (%s, %s, %s)'
+        cursor = conexao.cursor()
+        INSERT = 'INSERT INTO tb_usuarios(usu_nome, usu_email, usu_senha) VALUES (?, ?, ?)'
         cursor.execute(INSERT, (nome, email, senha,))
         conexao.commit()
 

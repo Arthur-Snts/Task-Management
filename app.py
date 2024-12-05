@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for
 from flask_login import LoginManager
-from models.models import User
+from models.user import User
 from controllers import users, tasks
 
 login_manager = LoginManager()
