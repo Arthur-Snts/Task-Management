@@ -18,6 +18,7 @@ def login():
             return render_template('users/index.html', frase = "Email Inexistente, Tente novamente, ou se Cadastre")
         
         if user and check_password_hash(hash, senha):
+            
             login_user(user)
 
             return redirect(url_for('tasks.inicial'))
@@ -34,6 +35,7 @@ def cadastro():
 
         User.insert_user(nome, email, hash)
         user = User.select_user_by_email(email)
+        
         login_user(user)
         return redirect(url_for("tasks.inicial"))
     
